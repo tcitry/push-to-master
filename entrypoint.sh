@@ -5,7 +5,11 @@ if [ -z $1 ]; then
     REF='master'
 fi
 
-REMOTE_REPO="https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+if [ -z "${TOKEN}" ]; then
+  TOKEN=${GITHUB_TOKEN}
+fi
+
+REMOTE_REPO="https://${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 cd "${GITHUB_WORKSPACE}" || exit 1
 rm -rf .git
 git init

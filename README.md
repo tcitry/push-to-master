@@ -26,7 +26,7 @@ action "Filters for GitHub Actions" {
 }
 
 action "push action" {
-  uses = "tcitry/push-to-master/@master"
+  uses = "tcitry/push-to-master/@v1.0"
   needs = "Filters for GitHub Actions"
   secrets = ["GITHUB_TOKEN"]
   args = "<dist branch>"
@@ -34,4 +34,6 @@ action "push action" {
 
 ```
 
-*NOTE: If `dist branch` is empty will push to master!*
+**NOTE: If `dist branch` is empty will push to master!**
+
+The action need your `GITHUB_TOKEN`, or you can custom a secrets ENV `TOKEN` to fill with your token.
