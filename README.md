@@ -2,7 +2,7 @@
 
 ## what is it
 
-It seems like "pull request" but actually is "git push -f origin you-branch".
+It seems like "pull request" but actually is "git push -f origin dist-branch".
 
 ```
 rm -rf .git
