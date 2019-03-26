@@ -12,4 +12,5 @@ action "push action" {
   uses = "tcitry/push-to-master/@master"
   needs = "Filters for GitHub Actions"
   secrets = ["GITHUB_TOKEN"]
+  args = ""
 }
