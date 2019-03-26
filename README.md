@@ -1,5 +1,19 @@
 # push-to-master
 
+## what is it
+
+It seems like "pull request" but actually is "git push -f origin you-branch".
+
+```
+rm -rf .git
+git init
+git add .
+git commit -m 'Auto Pushed From Action'
+git push --force master:<dist branch>
+```
+
+## main.workflow example
+
 ```
 workflow "push to master" {
   on = "push"
@@ -8,13 +22,16 @@ workflow "push to master" {
 
 action "Filters for GitHub Actions" {
   uses = "actions/bin/filter@b2bea0749eed6beb495a8fa194c071847af60ea1"
-  args = "branch <your branch>"
+  args = "branch <pushed branch>"
 }
 
 action "push action" {
   uses = "tcitry/push-to-master/@master"
   needs = "Filters for GitHub Actions"
   secrets = ["GITHUB_TOKEN"]
+  args = "<dist branch>"
 }
 
 ```
+
+*NOTE: If `dist branch` is empty will push to master!*
