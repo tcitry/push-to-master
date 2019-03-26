@@ -9,7 +9,7 @@ action "Filters for GitHub Actions" {
 }
 
 action "push action" {
-  uses = "tcitry/push-to-master/@master"
+  uses = "tcitry/push-to-master/@v1.0"
   needs = "Filters for GitHub Actions"
   secrets = ["GITHUB_TOKEN"]
   args = ""
