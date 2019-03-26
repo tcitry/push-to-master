@@ -6,8 +6,8 @@ LABEL "homepage"="https://github.com/marketplace/actions/push-to-master"
 
 LABEL "com.github.actions.name"="Push to master"
 LABEL "com.github.actions.description"="Push to master or other branch"
-LABEL "com.github.actions.icon"="git-branch"
-LABEL "com.github.actions.color"="orange"
+LABEL "com.github.actions.icon"="git-pull-request"
+LABEL "com.github.actions.color"="purple"
 
 COPY LICENSE README.md /
 
